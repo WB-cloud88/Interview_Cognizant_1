@@ -1,0 +1,29 @@
+paths:
+  raw_data: data/raw
+  processed_data: data/processed
+  models_dir: data/models
+
+business_params:
+  failure_cost_gbp: 500000
+  false_alarm_cost_gbp: 60000
+  prediction_horizon_days: 30
+
+model_params:
+  classifier:
+    n_estimators: 150
+    max_depth: 6
+    learning_rate: 0.05
+    random_state: 42
+  regressor:
+    n_estimators: 100
+    max_depth: 5
+    learning_rate: 0.05
+    random_state: 42
+
+feature_params:
+  rolling_window_days: 14
+  high_load_threshold_mva: 75
+
+mlflow:
+  experiment_name: transformer_failure_prediction
+  tracking_uri: ./mlruns
